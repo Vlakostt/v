@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GiveFive Full Website</title>
+    <style>
+        /* Основные стили */
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #4A00E0, #8E2DE2);
+            color: white;
+            scroll-behavior: smooth;
+            position: relative;
+            overflow: hidden;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin: 20px 0;
+        }
+        p {
+            font-size: 1.2em;
+        }
+        .container {
+            text-align: center;
+            padding: 50px;
+        }
+        .hand-img {
+            width: 150px;
+            height: auto;
+            animation: bounce 3s infinite;
+        }
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+        /* Стиль для кнопок */
+        .social-links {
+            margin-top: 30px;
+        }
+        .social-links a {
+            display: inline-block;
+            margin: 0 10px;
+            padding: 12px 25px;
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 30px;
+            background: linear-gradient(135deg, #6A00E0, #B620E2);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+        .social-links a:hover {
+            background: linear-gradient(135deg, #B620E2, #6A00E0);
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+        }
+        /* Разделы */
+        section {
+            padding: 50px;
+            text-align: center;
+        }
+        .partners-section {
+            background: #3700B3;
+        }
+        .partners-section h2, .influencers-section h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .gallery-item {
+            width: 200px;
+            text-align: center;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            border: 2px solid white;
+            transition: transform 0.3s ease;
+        }
+        .gallery-item img:hover {
+            transform: scale(1.1);
+        }
+        .gallery-item p {
+            margin-top: 10px;
+            font-size: 16px;
+        }
+        /* Анимация полосок */
+        .strip {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.2);
+            width: 200px;
+            height: 4px;
+            border-radius: 2px;
+            animation: moveStrips 10s linear infinite;
+        }
+        @keyframes moveStrips {
+            0% {
+                transform: translateY(-50px) rotate(45deg);
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(120vh) rotate(45deg);
+                opacity: 0;
+            }
+        }
+        .strip:nth-child(1) {
+            top: 10%;
+            left: 15%;
+            animation-delay: 0s;
+        }
+        .strip:nth-child(2) {
+            top: 25%;
+            left: 40%;
+            animation-delay: 2s;
+        }
+        .strip:nth-child(3) {
+            top: 50%;
+            left: 70%;
+            animation-delay: 4s;
+        }
+        .strip:nth-child(4) {
+            top: 75%;
+            left: 20%;
+            animation-delay: 6s;
+        }
+        .strip:nth-child(5) {
+            top: 90%;
+            left: 50%;
+            animation-delay: 8s;
+        }
+        /* Анимация эмодзи */
+        @keyframes emojiMove {
+            0% {
+                transform: scale(0.5) translate(-200px, -200px);
+                opacity: 0;
+            }
+            50% {
+                transform: scale(1.2);
+                opacity: 0.8;
+            }
+            100% {
+                transform: scale(1) translate(0, 0);
+                opacity: 1;
+            }
+        }
+        .emoji {
+            position: absolute;
+            font-size: 2em;
+            animation: emojiMove 3s ease-in-out infinite;
+            z-index: 1;
+        }
+        .emoji:nth-child(1) {
+            top: 10%;
+            left: 20%;
+            animation-delay: 0s;
+        }
+        .emoji:nth-child(2) {
+            top: 40%;
+            left: 80%;
+            animation-delay: 1s;
+        }
+        .emoji:nth-child(3) {
+            top: 70%;
+            left: 10%;
+            animation-delay: 2s;
+        }
+        .emoji:nth-child(4) {
+            top: 90%;
+            left: 50%;
+            animation-delay: 2.5s;
+        }
+    </style>
+</head>
+<body>
+    <!-- Эмодзи на заднем фоне -->
+    <div class="emoji">🖐️</div>
+    <div class="emoji">🖐️</div>
+    <div class="emoji">🖐️</div>
+    <div class="emoji">🖐️</div>
+
+    <!-- Полоски -->
+    <div class="strip"></div>
+    <div class="strip"></div>
+    <div class="strip"></div>
+    <div class="strip"></div>
+    <div class="strip"></div>
+
+    <!-- Верхний блок -->
+    <div class="container">
+        <img src="hand.jpg" alt="Hand Icon" class="hand-img">
+        <h1>Добро пожаловать в Five</h1>
+        <p>Присоединяйтесь к нашему сообществу!</p>
+        <div class="social-links">
+            <a href="https://t.me/givefive_community" target="_blank">Telegram Канал</a>
+            <a href="https://t.me/givefive_chat" target="_blank">Telegram Чат</a>
+            <a href="https://getgems.io/fivebot" target="_blank">GetGems</a>
+        </div>
+    </div>
+
+    <!-- Раздел: Партнёры -->
+    <section class="partners-section" id="partners">
+        <h2>Наши партнёры</h2>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="partner1.jpg" alt="Partner 1">
+                <p>Партнёр 1</p>
+            </div>
+            <div class="gallery-item">
+                <img src="partner2.jpg" alt="Partner 2">
+                <p>Партнёр 2</p>
+            </div>
+            <div class="gallery-item">
+                <img src="partner3.jpg" alt="Partner 3">
+                <p>Партнёр 3</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Раздел: Инфлюенсеры -->
+    <section class="influencers-section" id="influencers">
+        <h2>Мои партнёры-инфлюенсеры</h2>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="influencer1.jpg" alt="Influencer 1">
+                <p>Инфлюенсер 1</p>
+            </div>
+            <div class="gallery-item">
+                <img src="influencer2.jpg" alt="Influencer 2">
+                <p>Инфлюенсер 2</p>
+            </div>
+            <div class="gallery-item">
+                <img src="influencer3.jpg" alt="Influencer 3">
+                <p>Инфлюенсер 3</p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
